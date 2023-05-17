@@ -14,9 +14,10 @@ db = Session()
 def scrape(url):
     re = requests.get(url)
     soup = bs(re.content,'html.parser')
-    text = soup.find('article').get_text()
+    # text = soup.find('article').get_text()
+    text = "".join(soup.strings)
 
-    words = text.split()[:300]
+    words = text.split()[:100]
     content = ' '.join(words)
 
     return content
@@ -58,7 +59,7 @@ try:
     st.subheader('History')
     with st.container():
         # Place your content inside the expander
-        for row in rows:
+        for row in rows[::-1]:
             st.write(row.url, ' - ', row.category)
 
 except MissingSchema as e:
