@@ -27,4 +27,8 @@ python -m streamlit run app.py
 * Login to [Streamlit](https://streamlit.io) website with the same mail id as the project repository in which it is present.
 * Click on Add App and select the repository and app.py file. Click on deploy.
 
+<<<<<<< HEAD
 ### Hurray🥳🎉, your app is successfully deployed.
+=======
+### Hurray🥳🎉, your app is successfully deployed.
+>>>>>>> a81167d3e57f85944c3e552d632b61daae939f45
