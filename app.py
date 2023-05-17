@@ -14,10 +14,13 @@ db = Session()
 def scrape(url):
     re = requests.get(url)
     soup = bs(re.content,'html.parser')
-    # text = soup.find('article').get_text()
-    text = "".join(soup.strings)
+    text = soup.find_all('p')
+    s = ''
+    for line in text:
+        s += line.get_text()
+    # text = "".join(soup.strings)
 
-    words = text.split()[:100]
+    words = s.split()[:100]
     content = ' '.join(words)
 
     return content
