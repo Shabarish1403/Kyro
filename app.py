@@ -20,7 +20,7 @@ def scrape(url):
         s += line.get_text()
     # text = "".join(soup.strings)
 
-    words = s.split()[:100]
+    words = s.split()[10:100]
     content = ' '.join(words)
 
     return content
