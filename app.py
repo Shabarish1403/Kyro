@@ -58,7 +58,7 @@ try:
     st.subheader('History')
     with st.container():
         # Place your content inside the expander
-        for row in reverserd(rows):
+        for row in rows[::-1]:
             st.write(row.url, ' - ', row.category)
 
 except MissingSchema as e:
